@@ -2,6 +2,8 @@
 
 Local skill project for using a separately installed AudioGen setup from Claude, Codex, and Cursor.
 
+You need to install Audiogen locally for example: https://huggingface.co/facebook/audiogen-medium
+
 License: MIT
 
 This repository is the source of truth for:
