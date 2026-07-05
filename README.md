@@ -2,6 +2,8 @@
 
 Local skill project for using a separately installed AudioGen setup from Claude, Codex, and Cursor.
 
+License: MIT
+
 This repository is the source of truth for:
 
 - a canonical `audiogen` skill
