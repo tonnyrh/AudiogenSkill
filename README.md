@@ -17,6 +17,9 @@ This repository does **not** vendor:
 
 Those stay outside git and are owned by the user machine.
 
+## What is it used for?
+AudioGenskill can be used to generate sound effects for games or similar when needed by Claude, Codex or Cursor. 
+
 ## Scope
 
 This project is meant to solve one narrow problem well:
