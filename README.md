@@ -2,7 +2,6 @@
 
 Local skill project for using a separately installed AudioGen setup from Claude, Codex, and Cursor.
 
-You need to install Audiogen locally for example: https://huggingface.co/facebook/audiogen-medium
 
 License: MIT
 
@@ -196,6 +195,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 ## One Known-Good Install Sequence
 
+I used this as basis: https://huggingface.co/facebook/audiogen-medium
 This is included as a reference for documentation and troubleshooting, not as a promise that every Windows machine will behave the same way:
 
 ```powershell
