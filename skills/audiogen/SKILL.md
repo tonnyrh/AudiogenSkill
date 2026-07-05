@@ -38,6 +38,12 @@ Check importability without generating audio:
 python "C:\vscode\AudioGenSkill\skills\audiogen\scripts\check_audiogen.py" --check-import
 ```
 
+If import validation stalls on this machine, lower the timeout and inspect the temp logs:
+
+```powershell
+python "C:\vscode\AudioGenSkill\skills\audiogen\scripts\check_audiogen.py" --check-import --import-timeout 10
+```
+
 ## Generation
 
 Generate from the repository checkout:

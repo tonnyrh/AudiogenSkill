@@ -103,6 +103,7 @@ It verifies:
 - the model directory exists
 - expected model files exist
 - optional import check against `audiocraft`
+- optional import timeout with captured stdout/stderr logs in `%TEMP%`
 
 Run:
 
@@ -110,7 +111,15 @@ Run:
 cd C:\vscode\AudioGenSkill
 python .\skills\audiogen\scripts\check_audiogen.py
 python .\skills\audiogen\scripts\check_audiogen.py --check-import
+python .\skills\audiogen\scripts\check_audiogen.py --check-import --import-timeout 10
 ```
+
+If the import check stalls, the script writes the full captured output to:
+
+- `%TEMP%\audiogen-import-stdout.log`
+- `%TEMP%\audiogen-import-stderr.log`
+
+The JSON output also includes tail snippets and the timeout status.
 
 ## Install The Skill Into Tool Runtimes
 
