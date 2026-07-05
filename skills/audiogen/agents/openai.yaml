@@ -1,0 +1,4 @@
+interface:
+  display_name: "AudioGen"
+  short_description: "Generate short sound effects with a local AudioGen install"
+  default_prompt: "Use $audiogen to verify a local AudioGen path setup or generate a short sound effect through the user's local AudioGen installation."

@@ -1,0 +1,11 @@
+---
+description: Route Cursor work in AudioGenSkill to the canonical audiogen skill when the task is about local AudioGen usage, sound generation, or skill maintenance.
+alwaysApply: true
+---
+
+# AudioGenSkill Routing
+
+- Treat [AGENTS.md](../../AGENTS.md) as the repository-level workflow baseline.
+- Load the canonical skill under `skills/audiogen/SKILL.md` before using the wrapper in `.cursor/skills/audiogen/`.
+- Use `audiogen` for local AudioGen setup guidance, path verification, short SFX generation, and maintenance of the AudioGen skill itself.
+- Keep this repository focused on guidance and skill integration, not bundling the full AudioGen installation into git.
