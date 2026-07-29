@@ -74,6 +74,29 @@ $env:USERPROFILE\.codex\skills\audiogen\
 $env:USERPROFILE\.cursor\skills\audiogen\
 ```
 
+## Local GUI
+
+For an interactive prompt, audition, refinement, and history workflow, start the
+dependency-free local web interface:
+
+```powershell
+python "C:\vscode\AudioGenSkill\skills\audiogen\scripts\audiogen_gui.py"
+```
+
+The GUI binds to `127.0.0.1` by default and opens in the default browser. It:
+
+- generates WAV variants through `generate_sfx.py`
+- keeps generation jobs responsive while AudioGen runs
+- plays completed variants directly in the browser
+- restores an earlier prompt and settings for refinement
+- stores searchable history and favorites outside this repository
+
+The default data directory is `%LOCALAPPDATA%\AudioGenSkill`, falling back to
+`~/.audiogen-skill`. Override it with `AUDIOGEN_GUI_DATA`. Use `--no-browser`
+for a server-only launch, or `--host` and `--port` to change the listener.
+Only bind to a non-loopback host on a trusted network; the GUI has no
+authentication.
+
 ## Good Use Cases
 
 - UI clicks and confirms

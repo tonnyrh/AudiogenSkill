@@ -175,6 +175,27 @@ python "$env:USERPROFILE\.codex\skills\audiogen\scripts\generate_sfx.py" --prese
 python "$env:USERPROFILE\.cursor\skills\audiogen\scripts\generate_sfx.py" --preset correct
 ```
 
+## Local Sound Studio GUI
+
+Start the local browser interface:
+
+```powershell
+python .\skills\audiogen\scripts\audiogen_gui.py
+```
+
+The Sound Studio lets you:
+
+- write or reuse a prompt and choose duration and variant count
+- generate in the background and follow live job status
+- audition every WAV result in the browser
+- refine an earlier sound by restoring its prompt and settings
+- search history, mark favorites, and remove unwanted generations
+- verify the configured AudioGen paths without generating audio
+
+Generated audio and history stay outside git. The default location is
+`%LOCALAPPDATA%\AudioGenSkill`; set `AUDIOGEN_GUI_DATA` to choose another
+directory. The server listens only on `127.0.0.1` by default.
+
 ## Windows Notes
 
 This was apparently a delicate Windows setup. The repository should preserve the lessons without pretending to be a universal installer.

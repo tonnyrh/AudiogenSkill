@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d1210">
+  <title>AudioGen Sound Studio</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="AudioGen Sound Studio">
+      <span class="brand-mark"><i></i><i></i><i></i><i></i><i></i></span>
+      <span>AudioGen <b>Sound Studio</b></span>
+    </a>
+    <div class="status-wrap">
+      <span id="health-dot" class="status-dot checking"></span>
+      <span id="health-text">Sjekker AudioGen…</span>
+      <button id="check-health" class="icon-button" title="Sjekk på nytt">↻</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">LOCAL AI AUDIO LAB</div>
+      <h1>Gi ideene dine <em>en lyd.</em></h1>
+      <p>Beskriv lyden du ser for deg. Lag varianter, lytt, finjuster og bygg ditt eget lydbibliotek.</p>
+    </section>
+
+    <section class="workspace">
+      <form id="generator-form" class="composer panel">
+        <div class="panel-heading">
+          <div>
+            <span class="step">01</span>
+            <h2>Lag en ny lyd</h2>
+          </div>
+          <span class="local-pill">Kjører lokalt</span>
+        </div>
+        <label for="prompt">Hva skal det høres ut som?</label>
+        <textarea id="prompt" maxlength="1000" required placeholder="F.eks. et kort, krystallklart magisk pling med myk hale…"></textarea>
+        <div class="prompt-footer">
+          <span id="char-count">0 / 1000</span>
+          <button type="button" id="surprise" class="text-button">✦ Inspirer meg</button>
+        </div>
+        <div class="presets">
+          <span>Rask start</span>
+          <div id="preset-list"></div>
+        </div>
+        <div class="controls">
+          <label>Lengde <strong id="duration-value">2.0 s</strong>
+            <input id="duration" type="range" min="0.2" max="10" step="0.1" value="2">
+          </label>
+          <label>Varianter
+            <select id="variants">
+              <option value="1">1 variant</option>
+              <option value="2" selected>2 varianter</option>
+              <option value="3">3 varianter</option>
+              <option value="4">4 varianter</option>
+            </select>
+          </label>
+        </div>
+        <input id="parent-id" type="hidden">
+        <div id="refine-note" class="refine-note hidden"></div>
+        <button id="generate" class="primary-button" type="submit">
+          <span class="button-icon">▶</span><span>Generer lyd</span>
+        </button>
+        <p class="hint">Genereringen kan ta litt tid første gang modellen lastes.</p>
+      </form>
+
+      <aside class="tips panel">
+        <span class="step">02</span>
+        <h2>Prompt-oppskrift</h2>
+        <p>En presis prompt gir bedre og mer kontrollerbare lyder.</p>
+        <ol>
+          <li><b>Kilde</b><span>Hva lager lyden?</span></li>
+          <li><b>Karakter</b><span>Skarp, varm, tung, luftig…</span></li>
+          <li><b>Bevegelse</b><span>Stiger, faller, pulserer…</span></li>
+          <li><b>Kontekst</b><span>Spill, film, UI, natur…</span></li>
+        </ol>
+        <blockquote>«Kort metallisk treff, tungt og resonant, mørkt fantasyspill, uten musikk»</blockquote>
+      </aside>
+    </section>
+
+    <section class="library">
+      <div class="library-heading">
+        <div>
+          <span class="step">03</span>
+          <h2>Ditt lydbibliotek</h2>
+        </div>
+        <div class="library-tools">
+          <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Søk i historikken"></label>
+          <button id="favorites-filter" class="filter-button" aria-pressed="false">☆ Favoritter</button>
+        </div>
+      </div>
+      <div id="history" class="history-grid"></div>
+      <div id="empty" class="empty">
+        <div class="empty-wave">⌁⌁⌁</div>
+        <h3>Ingen lyder ennå</h3>
+        <p>Den første genereringen din dukker opp her.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
